@@ -39,13 +39,13 @@ Create a Free Azure Account
 4. Once the VM is created, copy the public IP and RDP into the machine.
 5. After logging in, make the VM vulnerable:
 * Disable the Windows Firewall
-* Gather up some Old Software
+* Gather up some Old Software from Google 
 * Install an Old Version of FireFox: Firefox Setup 97.0b5
 * Install an Old Version of VLC Player: vlc-1.1.7-win32
 * Install an Old Version of Adobe Reader: 10.0_AdbeRdr1000_en_US_1_
 * Restart the VM.
 
-# Configure OpenVAS to Perform First Unauthenticated Scan against our Vulnerable VM
+# Configure OpenVAS to Perform the First Unauthenticated Scan against our Vulnerable VM
 <img width="1657" alt="Screenshot 2023-11-07 at 10 14 00 PM" src="https://github.com/efeojar/openvas/assets/66268247/701862a3-02ef-4e25-91a6-0d6fe67cf648">
 
 1. Login to OpenVAS with the login details and URL given when you SSH into OpenVasb and navigate to Assets > Hosts > New Host.
@@ -73,7 +73,7 @@ Create a Free Azure Account
   * Value: 1
 * Close Registry Editor.
 5. Restart the VM.
-Please note: In a Windows credential scan, these steps are taken to enhance scan efficiency and access to the target system. Disabling Windows Firewall allows the scanning tool to communicate without port restrictions. Disabling User Account Control (UAC) prevents pop-up interruptions and enabling Remote Registry access is crucial for gathering system information. The "LocalAccountTokenFilterPolicy" registry key modification allows the scanning tool to access the target system's registry. These actions are temporary and specific to scanning tasks, as they might reduce security for normal system operation.
+Just so you know, in a Windows credential scan, these steps are taken to enhance scan efficiency and access to the target system. Disabling Windows Firewall allows the scanning tool to communicate without port restrictions. Disabling User Account Control (UAC) prevents pop-up interruptions and enabling Remote Registry access is crucial for gathering system information. The "LocalAccountTokenFilterPolicy" registry key modification allows the scanning tool to access the target system's registry. These actions are temporary and specific to scanning tasks, as they might reduce security for normal system operation.
 
 # Make Configurations for Credentialed Scans (OpenVAS)
 1. Go to Configuration > Credentials > New Credential.
@@ -95,15 +95,15 @@ Please note: In a Windows credential scan, these steps are taken to enhance scan
 <img width="1655" alt="Screenshot 2023-11-08 at 8 46 48 AM" src="https://github.com/efeojar/openvas/assets/66268247/7d70ae70-a7ba-455b-8190-a5387f5f8de7">
 
 1. Within Greenbone / OpenVAS, go to Scans > Tasks.
-2. CLONE the "Scan - Create a new name to seperate them -  Task and Edit it.
+2. CLONE the "Scan - Create a new name to separate them -  Task and Edit it.
 3. Name / Comment: "Scan - Use the same name as #2 - Credentialed".
-4. Targets: The same target created ealier - Credentialed Scan.
+4. Targets: The same target was created earlier - Credentialed Scan.
 * Save.
 5. Click the Play button to launch the new Credentialed Scan and wait for it to finish.
 
 # Remediate Vulnerabilities
 1. Log back into your Vulnerable VM.
-2. Uninstall Adobe Reader, VLC Player, and Firefox or Upgrade to the lastest verison. 
+2. Uninstall Adobe Reader, VLC Player, and Firefox or Upgrade to the latest version. 
 Restart the VM.
 3. Re-initiate the "Credentialed" scan and observe the results.
 
