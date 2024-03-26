@@ -48,7 +48,7 @@ Create a Free Azure Account
 # Configure OpenVAS to Perform the First Unauthenticated Scan against our Vulnerable VM
 <img width="1657" alt="Screenshot 2023-11-07 at 10 14 00 PM" src="https://github.com/efeojar/openvas/assets/66268247/701862a3-02ef-4e25-91a6-0d6fe67cf648">
 
-1. Login to OpenVAS with the login details and URL given when you SSH into OpenVasb and navigate to Assets > Hosts > New Host.
+1. Login to OpenVAS with the login details and URL given when you SSH into OpenVas and navigate to Assets > Hosts > New Host.
 2. Add the Client VM PRIVATE IP Address to the host.
 3. Create a New Target from the Host, name it whatever you like.
 4. Take note of the credentials. We will add SMB credentials later.
